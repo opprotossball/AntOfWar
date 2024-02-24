@@ -123,6 +123,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &41400148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5958537844923214504, guid: 2367a22b174e727459d674d2a460d1e5, type: 3}
+  m_PrefabInstance: {fileID: 8740952264043631510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &41400151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41400148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa018fb440555124aa3a950675462097, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -31980,11 +32006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606800422079979856, guid: 54f8a231664c11c44b3db94d64b23661, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.12
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2606800422079979856, guid: 54f8a231664c11c44b3db94d64b23661, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.97
       objectReference: {fileID: 0}
     - target: {fileID: 2606800422079979856, guid: 54f8a231664c11c44b3db94d64b23661, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32035,6 +32061,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worker
       objectReference: {fileID: 0}
+    - target: {fileID: 7054790428233714682, guid: 2367a22b174e727459d674d2a460d1e5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 199020002, guid: f1993229cfc94e1458a487f24dc95f4f, type: 3}
+    - target: {fileID: 7054790428233714682, guid: 2367a22b174e727459d674d2a460d1e5, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8992698103120473195, guid: 2367a22b174e727459d674d2a460d1e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -32078,7 +32112,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5958537844923214504, guid: 2367a22b174e727459d674d2a460d1e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 41400151}
   m_SourcePrefab: {fileID: 100100000, guid: 2367a22b174e727459d674d2a460d1e5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
