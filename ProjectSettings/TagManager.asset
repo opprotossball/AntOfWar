@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Map
+  - Units
+  - Trails
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 2791522569
+    locked: 0
+  - name: Units
+    uniqueID: 2095949829
+    locked: 0
+  - name: Trails
+    uniqueID: 2004724227
     locked: 0
