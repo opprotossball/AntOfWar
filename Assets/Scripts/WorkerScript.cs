@@ -6,12 +6,14 @@ using UnityEngine;
 public class WorkerScript : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float gatheringRate;
     [SerializeField] private float trailDetectionRange;
     private static readonly float trailEps = 0.001f;
     public TrailManager trailManager;
     private Rigidbody2D rb;
     private TrailDto trail;
     private int nextNode;
+    private float food;
 
     void Start()
     {
@@ -21,6 +23,21 @@ public class WorkerScript : MonoBehaviour
             Trail = null,
             Forward = false,
         };
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Collision");
+        GameObject other = collision.gameObject;
+        if (other.GetComponent<FoodScript>() != null)
+        {
+            food = other.GetComponent<FoodScript>().Gather(gatheringRate);
+        }
+        else if (other.GetComponent<Hatchery>() != null)
+        {
+            // give to hatch
+            food = 0;
+        }
     }
 
     private void FindTrail()
