@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WorkerScript : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float trailDetectionRange;
     private static readonly float trailEps = 0.001f;
     public TrailManager trailManager;
     private Rigidbody2D rb;
@@ -25,19 +27,29 @@ public class WorkerScript : MonoBehaviour
     {
         if (trail.Trail == null)
         {
-            trail = trailManager.FindNearestEnd(gameObject.transform.position);
-            if (trail.Trail == null)
+            TrailDto newTrail = trailManager.FindNearestEnd(gameObject.transform.position);
+            if (newTrail.Trail == null)
             {
                 return;
             }
-            if (trail.Forward)
+            LineRenderer lr = newTrail.Trail.GetComponent<LineRenderer>();
+            if (newTrail.Forward)
             {
+                if (Vector3.Distance(transform.position, lr.GetPosition(0)) > trailDetectionRange)
+                {
+                    return;
+                }
                 nextNode = 1;
             } 
             else
             {
-                nextNode = trail.Trail.GetComponent<LineRenderer>().positionCount - 1;
+                if (Vector3.Distance(transform.position, lr.GetPosition(lr.positionCount - 1)) > trailDetectionRange)
+                {
+                    return;
+                }
+                nextNode = lr.positionCount - 1;
             }
+            trail = newTrail;
         }
     }
 

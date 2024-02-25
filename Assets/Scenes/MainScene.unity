@@ -32185,6 +32185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2526d41476f9124bafa04e92d7860d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minPointDist: 0.05
   LinePrefab: {fileID: 6608094177579298614, guid: f3a26dedbd3216f42a11d5e611afda32, type: 3}
   TrailManager: {fileID: 1197823356}
 --- !u!4 &8388615729154852837

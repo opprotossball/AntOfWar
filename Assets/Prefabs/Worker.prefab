@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  trailDetectionRange: 3
   trailManager: {fileID: 0}
 --- !u!50 &6052052888102357169
 Rigidbody2D:
