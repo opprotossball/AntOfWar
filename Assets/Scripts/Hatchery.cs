@@ -7,15 +7,14 @@ public class Hatchery : MonoBehaviour
 {
     [SerializeField] private GameObject WorkerPrefab;
     [SerializeField] private float Cooldown;
+    [SerializeField] private TrailManager TrailManager;
     private float LastSpawned;
 
-    // Start is called before the first frame update
     void Start()
     {
         LastSpawned = Time.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time - LastSpawned > Cooldown)
@@ -27,6 +26,7 @@ public class Hatchery : MonoBehaviour
 
     private void SpawnAnt()
     {
-        GameObject.Instantiate(WorkerPrefab, gameObject.transform);
+        GameObject newAnt = GameObject.Instantiate(WorkerPrefab, gameObject.transform);
+        newAnt.GetComponent<WorkerScript>().trailManager = TrailManager;
     }
 }

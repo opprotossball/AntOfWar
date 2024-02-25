@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5884024640576920748}
   - component: {fileID: 8781527982984664583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FeromoneTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2095949829
+  m_SortingLayerID: 2004724227
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Positions:
