@@ -12,6 +12,7 @@ public class Hatchery : MonoBehaviour
     [SerializeField] private float baseCooldown = 10.0f;
     private float currentCooldown;
     [SerializeField] TMP_Text foodText;
+    [SerializeField] TrailManager TrailManager;
     [SerializeField] private float startFood = 100f;
     private float currentFood;
 
@@ -49,7 +50,8 @@ public class Hatchery : MonoBehaviour
 
     private void SpawnAnt()
     {
-        GameObject.Instantiate(WorkerPrefab, gameObject.transform);
+        GameObject newAnt = GameObject.Instantiate(WorkerPrefab, gameObject.transform);
+        newAnt.GetComponent<WorkerScript>().trailManager = TrailManager;
     }
 
     private void UpdateCooldown()

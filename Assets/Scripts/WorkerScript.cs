@@ -35,7 +35,7 @@ public class WorkerScript : MonoBehaviour
         }
         else if (other.GetComponent<Hatchery>() != null)
         {
-            // give to hatch
+            other.GetComponent<Hatchery>().AddFood(food);
             food = 0;
         }
     }

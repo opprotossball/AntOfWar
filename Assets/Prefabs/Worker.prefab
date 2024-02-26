@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2095949829
   m_SortingLayer: 3
-  m_SortingOrder: 100
+  m_SortingOrder: 200
   m_Sprite: {fileID: 199020002, guid: f1993229cfc94e1458a487f24dc95f4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  gatheringRate: 50
+  gatheringRate: 25
   trailDetectionRange: 3
   trailManager: {fileID: 0}
 --- !u!50 &6052052888102357169
