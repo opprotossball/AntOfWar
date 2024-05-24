@@ -63,10 +63,13 @@ public class TouchDraw : MonoBehaviour
             {
                 yield return null;
             }
-            drawn = true;
-            line.positionCount++;
-            line.SetPosition(line.positionCount - 1, pos);
-            yield return null;
+            else
+            {
+                drawn = true;
+                line.positionCount++;
+                line.SetPosition(line.positionCount - 1, pos);
+                yield return null;
+            }
         }
     }
 }
