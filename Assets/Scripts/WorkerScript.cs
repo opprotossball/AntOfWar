@@ -76,6 +76,7 @@ public class WorkerScript : MonoBehaviour
         if (trail.Trail != null)
         {
             LineRenderer lr = trail.Trail.GetComponent<LineRenderer>();
+            if (nextNode >= lr.positionCount || nextNode < 0) return;
             Vector3 target = lr.GetPosition(nextNode);
             transform.position = Vector2.MoveTowards(transform.position, target, speed*Time.deltaTime);
             if (Vector3.Distance(transform.position, target) < trailEps)
