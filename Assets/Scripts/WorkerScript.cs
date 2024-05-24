@@ -44,7 +44,7 @@ public class WorkerScript : MonoBehaviour
     {
         if (trail.Trail == null)
         {
-            TrailDto newTrail = trailManager.FindNearestEnd(gameObject.transform.position);
+            TrailDto newTrail = trailManager.FindNewTrail(gameObject.transform.position, trailDetectionRange);
             if (newTrail.Trail == null)
             {
                 return;
@@ -52,22 +52,15 @@ public class WorkerScript : MonoBehaviour
             LineRenderer lr = newTrail.Trail.GetComponent<LineRenderer>();
             if (newTrail.Forward)
             {
-                if (Vector3.Distance(transform.position, lr.GetPosition(0)) > trailDetectionRange)
-                {
-                    return;
-                }
                 nextNode = 1;
             } 
             else
             {
-                if (Vector3.Distance(transform.position, lr.GetPosition(lr.positionCount - 1)) > trailDetectionRange)
-                {
-                    return;
-                }
                 nextNode = lr.positionCount - 1;
             }
             trail = newTrail;
         }
+        Debug.Log(nextNode);
     }
 
     void FixedUpdate()
@@ -99,6 +92,7 @@ public class WorkerScript : MonoBehaviour
                     trail.Forward = false;
                     nextNode = lr.positionCount - 2;
                 }
+                Debug.Log(nextNode);
             }
         }
     }
