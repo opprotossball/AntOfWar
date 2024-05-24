@@ -30,19 +30,23 @@ public class CLockCameraZMovement : MonoBehaviour
         if(currentPosition.x > xBoundary)
         {
             currentPosition.x = xBoundary;
+            Debug.Log("chuj");
         }
-        else if (currentPosition.x < -1 * xBoundary)
+        else if (currentPosition.x < -1 * (xBoundary - 5))
         {
             currentPosition.x = -1 * (xBoundary -5);
+            Debug.Log("chuj2");
         }
         if(currentPosition.y > yBoundary )
         {
             currentPosition.y = yBoundary;
+            Debug.Log("chuj3");
         }
    
-        else if(currentPosition.y < -1 * yBoundary )
+        else if(currentPosition.y < -1 * (yBoundary - 10))
         {
             currentPosition.y = -1 * (yBoundary - 10);
+            Debug.Log("chuj4");
         }
 
         transform.position = currentPosition;
