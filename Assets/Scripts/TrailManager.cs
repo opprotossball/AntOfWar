@@ -20,35 +20,36 @@ public class TrailManager : MonoBehaviour
         Trails.AddLast(trail);
     }
 
-    public TrailDto FindNearestEnd(Vector3 pos)
+    public TrailDto FindNewTrail(Vector3 pos, float maxDist)
     {
-        GameObject? nearest = null;
         bool forward = false;
-        float minDist = float.MaxValue;
+        List<TrailDto> trailsInRange = new List<TrailDto>(); 
         foreach (GameObject trail in Trails)
         {
             LineRenderer lr = trail.GetComponent<LineRenderer>();
             float db = Vector3.Distance(pos, lr.GetPosition(0));
-            if (db < minDist)
+            if (db < maxDist)
             {
-                nearest = trail;
                 forward = true;
-                minDist = db;
+                trailsInRange.Add(new TrailDto()
+                {
+                    Trail = trail,
+                    Forward = true
+                });
             }
             int end = lr.positionCount - 1;
             float de = Vector3.Distance(pos, lr.GetPosition(end));
-            if (de < minDist)
+            if (de < maxDist)
             {
-                nearest = trail;
                 forward = false;
-                minDist = de;
+                trailsInRange.Add(new TrailDto()
+                {
+                    Trail = trail,
+                    Forward = false
+                });
             }
         }
-        return new TrailDto()
-        {
-            Trail = nearest,
-            Forward = forward
-        };
+        return trailsInRange.Count == 0 ? null : trailsInRange[Random.Range(0, trailsInRange.Count)];
     }
 
     public void ResetColors()
