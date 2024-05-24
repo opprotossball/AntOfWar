@@ -15,6 +15,7 @@ public class CameraZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         float newZoom = virtualCamera.m_Lens.OrthographicSize - scroll * zoomSpeed;
         newZoom = Mathf.Clamp(newZoom, minZoom, maxZoom);
