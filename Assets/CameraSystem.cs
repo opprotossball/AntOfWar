@@ -15,6 +15,7 @@ public class CameraSystem : MonoBehaviour
     private Vector2 lastMousePosition;
     private float targetFieldOfView = 50;
 
+
     [SerializeField]
     private void Update()
     {
