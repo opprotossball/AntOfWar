@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -603,6 +602,7 @@ GameObject:
   - component: {fileID: 837325782}
   - component: {fileID: 837325781}
   - component: {fileID: 837325780}
+  - component: {fileID: 837325784}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -718,6 +718,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -129.489, y: 0, z: 76.011}
+--- !u!114 &837325784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837325779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3ff6d70b8e1024d8d50ff1b35cc098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockedZPosition: -2
 --- !u!1 &943575017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1392,7 @@ GameObject:
   - component: {fileID: 2077642591}
   m_Layer: 6
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
